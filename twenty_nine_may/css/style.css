@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+}
+
+.container>div {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #000;
+}
+@media only screen and (min-width: 48px){
+    .container {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .container>div {
+        padding: 10px;
+        font-size: 14px;
+        background-color: lightblue;
+    }
+}
+@media only screen and (min-width: 480px) and (max-width: 7768px) {
+    .container {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .container>div {
+        padding: 10px;
+        font-size: 14px;
+        background-color: lightblue;
+    }
+}

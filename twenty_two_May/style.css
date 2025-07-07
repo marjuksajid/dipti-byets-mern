@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: kasem;
+    src: url("./fonts/kasem.ttf"");
+    font-style: 
+}
+
+*para1 {
+    color: black;
+}
+
+.main {
+    width: 300px;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 20px auto;
+    /* background: linear-gradient(to top right, lightblue, lightyellow, lightgreen); */
+    background: linear-gradient(white 30%, yellow 60%, black);
+    /* padding-left: ;
+    padding-top: ;
+    padding-right: ;
+    padding-bottom: ;
+    padding: 20px 10px 5px 15px;
+    margin-left: auto; 
+    margin-right: auto;
+    font-family: arial, sans-serif,; */
+}

@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+}
+
+.container {
+    width: 800px;
+    margin: 20px auto;
+    display: table;
+    border: 1px solid #ccc;
+}
+
+.row {
+    display: table-row;
+}
+
+.col {
+    display: table-cell;
+    padding: 8px 12px;
+    border-bottom: 1px solid #ccc;
+}
+
+.container>.row:not(:last-child)>.col {
+    border-bottom: 1px solid #ccc;
+}
+
+.col:not(:last-child) {
+    border-right: 1px solid #ccc;
+}
+
+.row>.col:not(:last-child) {
+    border-right: 1px solid #ccc;
+}
+
+.transform {
+    width: 100px;
+    height: 100px;
+    margin: 20px auto 600px;
+    background: url("../images/Government_Seal_of_Bangladesh.svg.png");
+    background-size: cover;
+    transition: transform 5s linear;
+}
+
+.transform:hover {
+    transform: translate(-550px, 50px) scale(.8) rotate(360deg);
+}
+
+.coin {
+    width: 400px;
+    height: 400px;
+    /* background: url("../images/Seal_of_the_President_of_Bangladesh_\(Monochrome\).svg.png"); */
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    animation: toss 5s linear infinite;
+}
+
+@keyframes toss {
+    0% {
+        background: url("../images/Seal_of_the_President_of_Bangladesh_\(Monochrome\).svg.png");
+        /* transform: rotate(0deg); */
+        /* left: -400px; */
+    }
+    50% {
+        background: url("../images/Government_Seal_of_Bangladesh.svg.png");
+    }
+
+    100% {
+        background: url("../images/Government_Seal_of_Bangladesh.svg.png");
+    }
+}

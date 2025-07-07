@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 200px;
+    height: 200px;
+    background-color: dodgerblue;
+    margin: 20px;
+    position: relative;
+}
+
+.container:hover {
+    top: 20px;
+    right: -20px;
+}
+
+.main {
+    width: 200px;
+    height: 200px;
+    background-color: lightcoral;
+    margin: 20px auto;
+    position: relative;
+}
+
+.pain {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    position: absolute;
+    top: 0px;
+    left: 50px;
+    transition: all 0.5s;
+}
+
+.main:hover>.pain {
+    top: 100px;
+    left: 100px;
+}
+
+.ek {
+    width: 250px;
+    height: 250px;
+    margin: 100px;
+    margin-left: 100px;
+    position: relative;
+    transition: all;
+    background-color: #111b6e;
+    border: 2px solid hotpink;
+}
+
+.ekk {
+    text-align: center;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background-color: aquamarine;
+}
+
+.ek:hover>.ekk {
+    top: 100px;
+    left: 100px;
+}
