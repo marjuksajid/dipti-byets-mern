@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$paraColor: #1a1a1a;
+$headerColor: #4a90e2;
+
+@mixin font-style {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    background-color: #fff;
+    padding: 20px;
+
+    >h1 {
+        color: $paraColor;
+        font-size: 2em;
+        margin-bottom: 0.5em;
+    }
+
+    >p {
+        color: $paraColor;
+        margin: 10px 0;
+    }
+
+    >button {
+        background-color: $headerColor;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        @include fontStyle(16px, normal, bold);
+
+        &:hover {
+            background-color: darken($headerColor, 20%);
+        }
+    }
+}
+
+.pain {
+    @extend .main;
+    background-color: lightgoldenrodyellow;
+
+    >a {
+        &:visited {
+            color: hotpink;
+        }
+
+        &:hover {
+            color: blue;
+        }
+
+        &:active {
+            color: red;
+        }
+    }
+}
