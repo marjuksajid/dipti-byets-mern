@@ -1,0 +1,26 @@
+.german {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 120px;
+    transition: all;
+    margin-left: 50%;
+    margin-top: 60px;
+}
+.german:hover {
+    flex-direction: row;
+}
+.black {
+    background-color: black;
+    flex: 1;
+}
+
+.yellow {
+    background-color: yellow;
+    flex: 1;
+}
+
+.red {
+    background-color: red;
+    flex: 1;
+}
