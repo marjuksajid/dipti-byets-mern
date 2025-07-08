@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body>
+
+    <div class="w-screen h-screen flex">
+        <div class="w-96 m-auto border">
+            <div class="flex" id="headers">
+                <div class="p-2 w-full text-center border-r bg-gray-200 cursor-pointer">Dhaka</div>
+                <div class="p-2 w-full text-center border-r border-b hover:bg-gray-300 cursor-pointer">Rajshahi</div>
+                <div class="p-2 w-full text-center border-r border-b hover:bg-gray-300 cursor-pointer">Khulna</div>
+                <div class="p-2 w-full text-center border-b hover:bg-gray-300 cursor-pointer">Rangpur</div>
+            </div>
+            <div class="relative h-36" id="details">
+                <div
+                    class="absolute bg-gray-200 flex items-center justify-center p-2 h-full top-0 left-0 transition-all duration-300 ease-in-out">
+                    Dhaka Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, quae.
+                </div>
+                <div
+                    class="absolute bg-gray-200 flex items-center justify-center p-2 h-full top-0 left-0 opacity-0 invisible transition-all duration-300 ease-in-out">
+                    Rajshahi Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, quae.
+                </div>
+                <div
+                    class="absolute bg-gray-200 flex items-center justify-center p-2 h-full top-0 left-0 opacity-0 invisible transition-all duration-300 ease-in-out">
+                    Khulna Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, quae.
+                </div>
+                <div
+                    class="absolute bg-gray-200 flex items-center justify-center p-2 h-full top-0 left-0 opacity-0 invisible transition-all duration-300 ease-in-out">
+                    Rangpur Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, quae.
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const headers = document.getElementById('headers').children;
+        const details = document.getElementById('details').children;
+
+        Array.from(headers).forEach((head, index) => {
+            head.addEventListener('click', () => {
+                Array.from(headers).forEach((h, i) => {
+                    if (i === index) {
+                        h.classList.add('bg-gray-200');
+                        h.classList.remove('border-b', 'hover:bg-gray-300');
+                        details[i].classList.remove('opacity-0', 'invisible');
+                    } else {
+                        h.classList.remove('bg-gray-200');
+                        h.classList.add('border-b', 'hover:bg-gray-300');
+                        details[i].classList.add('opacity-0', 'invisible');
+                    }
+                })
+                <!-- alert(index); -->
+            });
+        });
+    </script>
+</body>
+
+</html>
