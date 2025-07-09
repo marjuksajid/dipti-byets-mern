@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+</head>
+
+<body class="flex items-center justify-center h-screen bg-gray-300">
+
+  <div class="bg-gray-500 p-6 rounded-lg shadow-lg w-72">
+    <input type="text" id="display" class="w-full mb-4 text-2xl p-2 border rounded text-right bg-gray-200" disabled />
+
+    <div class="grid grid-cols-4 gap-2">
+      <!-- First Row -->
+      <button class="btn bg-gray-300" onclick="appendToDisplay('1')">1</button>
+      <button class="btn bg-gray-300" onclick="appendToDisplay('2')">2</button>
+      <button class="btn bg-gray-300" onclick="appendToDisplay('3')">3</button>
+      <button class="btn text-blue-600 bg-gray-300" onclick="appendToDisplay('+')">+</button>
+
+      <!-- Second Row -->
+      <button class="btn bg-gray-300" onclick="appendToDisplay('4')">4</button>
+      <button class="btn bg-gray-300" onclick="appendToDisplay('5')">5</button>
+      <button class="btn bg-gray-300" onclick="appendToDisplay('6')">6</button>
+      <button class="btn text-blue-600 bg-gray-300" onclick="appendToDisplay('-')">-</button>
+
+      <!-- Third Row -->
+      <button class="btn bg-gray-300" onclick="appendToDisplay('7')">7</button>
+      <button class="btn bg-gray-300" onclick="appendToDisplay('8')">8</button>
+      <button class="btn bg-gray-300" onclick="appendToDisplay('9')">9</button>
+      <button class="btn text-blue-600 bg-gray-300" onclick="appendToDisplay('*')">*</button>
+
+      <!-- Fourth Row -->
+      <button class="btn bg-gray-300" onclick="appendToDisplay('0')">0</button>
+      <button class="btn bg-red-500 text-white" onclick="clearDisplay()">C</button>
+      <button class="btn bg-green-500 text-white" onclick="calculateResult()">=</button>
+      <button class="btn text-blue-600 bg-gray-300" onclick="appendToDisplay('/')">/</button>
+    </div>
+  </div>
+
+  <script>
+    function appendToDisplay(value) {
+      document.getElementById('display').value += value;
+    }
+
+    function clearDisplay() {
+      document.getElementById('display').value = '';
+    }
+
+    function calculateResult() {
+      try {
+        document.getElementById('display').value = eval(document.getElementById('display').value);
+      } catch {
+        document.getElementById('display').value = 'Error';
+      }
+    }
+  </script>
+
+
+</body>
+
+</html>
