@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <div class="w-screen h-96 relative overflow-hidden">
+        <div class="w-full h-full absolute top-0 left-0 transition-opacity duration-1000 ease-in-out opacity-100 z-10">
+            <img src="./images/red-flower-with-blurred-background.jpg" class="w-full h-full object-cover">
+            <div class="absolute left-1/2 bottom-5 transform -translate-x-1/2 text-white text-center bg-black/50 p-4">
+                <h1 class="text-3xl">This is slider 1</h1>
+                <p class="my-3">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+            </div>
+        </div>
+        <div class="w-full h-full absolute top-0 left-0 transition-opacity duration-1000 ease-in-out opacity-0 z-0">
+            <img src="./images/red-gerbera-with-pink-chrysanthemum-leaves-white-background.jpg"
+                class="w-full h-full object-cover">
+            <div class="absolute left-1/2 bottom-5 transform -translate-x-1/2 text-white text-center bg-black/50 p-4">
+                <h1 class="text-3xl">This is slider 2</h1>
+                <p class="my-3">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+            </div>
+        </div>
+        <div class="w-full h-full absolute top-0 left-0 transition-opacity duration-1000 ease-in-out opacity-0 z-0">
+            <img src="./images/top-view-cute-flowers-with-copy-space.jpg" class="w-full h-full object-cover">
+            <div class="absolute left-1/2 bottom-5 transform -translate-x-1/2 text-white text-center bg-black/50 p-4">
+                <h1 class="text-3xl">This is slider 3</h1>
+                <p class="my-3">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('[class*="transition-opacity"]');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('opacity-100', i === index);
+                slide.classList.toggle('opacity-0', i !== index);
+                slide.classList.toggle('z-10', i === index);
+                slide.classList.toggle('z-0', i !== index);
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        setInterval(nextSlide, 3000);
+        showSlide(0);
+    </script>
+</body>
+
+</html>
